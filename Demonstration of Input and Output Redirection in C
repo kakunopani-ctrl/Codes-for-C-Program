@@ -1,0 +1,19 @@
+// Program: Demonstration of Input and Output Redirection
+
+#include <stdio.h>
+#include <stdlib.h>   // for exit()
+
+int main() {
+    char name[50];    // Buffer to store input
+
+    // Read input (from keyboard or redirected file)
+    if (scanf("%49s", name) != 1) {   // safer scanf with limit
+        printf("Error: Failed to read input!\n");
+        exit(1);
+    }
+
+    // Print output (to screen or redirected file)
+    printf("Name: %s\n", name);
+
+    return 0;
+}
