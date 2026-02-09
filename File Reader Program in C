@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>  // for exit()
+
+int main() {
+    FILE *fp;        // File pointer
+    int ch;          // Variable to store each character
+
+    // Open the file in read mode
+    fp = fopen("data.txt", "r");
+    if (fp == NULL) {
+        printf("Error: File not found!\n");
+        exit(1);  // Exit program with error code
+    }
+
+    // Read and display file contents character by character
+    printf("Contents of data.txt:\n\n");
+    while ((ch = fgetc(fp)) != EOF) {
+        putchar(ch);
+    }
+
+    // Close the file
+    fclose(fp);
+
+    printf("\n\nFile reading completed successfully.\n");
+    return 0;
+}
